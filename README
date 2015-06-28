@@ -1,0 +1,12 @@
+Audio::Sndio
+============
+
+Audio::Sndio is a Perl interface to OpenBSD's libsndio. Currently, only
+the low-level bindings (under ext/) are in working order, and they lack
+tests. You probably don't want to use that code in production just yet.
+Eventually, there will be some high-level modules that wrap those
+bindings in a more Perlish way.
+
+The reason there are no tests is that I haven't yet figured out the
+best way to stub libsndio calls in XS, and I don't want to rely on
+audio being usable on the system running tests.

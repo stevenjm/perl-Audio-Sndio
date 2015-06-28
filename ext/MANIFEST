@@ -1,0 +1,10 @@
+Bindings.xs
+Changes
+Makefile.PL
+MANIFEST
+ppport.h
+README
+t/Audio-Sndio-Bindings.t
+fallback/const-c.inc
+fallback/const-xs.inc
+lib/Audio/Sndio/Bindings.pm
