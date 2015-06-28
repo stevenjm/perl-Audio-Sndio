@@ -490,7 +490,7 @@ mio_pollfd(hdl, events)
 		int n;
 	CODE:
 		n = mio_nfds(hdl->hdl);
-		allow_pfds();
+		alloc_pfds();
 		if (hdl->npfd >= n)
 			RETVAL = mio_pollfd(hdl->hdl, hdl->pfd, events);
 		else

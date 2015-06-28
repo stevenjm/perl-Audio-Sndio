@@ -32,11 +32,10 @@ our %EXPORT_TAGS = (
 		SIO_NENC SIO_NRATE SIO_PLAY SIO_REC SIO_SYNC
 	)],
 	subs      => [qw(
-		mio_open mio_close mio_read mio_write mio_nfds mio_pollfd
-		mio_revents mio_eof sio_open sio_close sio_setpar sio_getpar
-		sio_getcap sio_start sio_stop sio_read sio_write sio_onmove
-		sio_nfds sio_pollfd sio_revents sio_eof sio_setvol sio_onvol
-		sio_initpar
+		mio_open mio_close mio_read mio_write mio_pollfd mio_revents
+		mio_eof sio_open sio_close sio_setpar sio_getpar sio_getcap
+		sio_start sio_stop sio_read sio_write sio_onmove sio_pollfd
+		sio_revents sio_eof sio_setvol sio_onvol
 	)],
 );
 $EXPORT_TAGS{all} = [@{$EXPORT_TAGS{constants}}, @{$EXPORT_TAGS{subs}}];
@@ -110,7 +109,8 @@ sio_setpar.
 =item *
 pollfd allocation is done transparently. There is no sio_nfds or
 mio_nfds, and the *_pollfd and *_revents subs lack the "pfd" argument.
-Those are only interfaces provided which differ from the C API.
+Those are the only interfaces provided which have arguments differing
+from the C API.
 
 =item *
 Callbacks are exposed as coderefs rather than C function pointers.

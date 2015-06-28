@@ -21,8 +21,9 @@ BEGIN { use_ok('Audio::Sndio::Bindings', qw(:all)) };
 
 my $fail = 0;
 for my $constname (qw(
-	MIO_IN MIO_OUT SIO_ERROR SIO_IGNORE SIO_LE_NATIVE SIO_MAXVOL SIO_NCHAN
-	SIO_NCONF SIO_NENC SIO_NRATE SIO_PLAY SIO_REC SIO_SYNC)) {
+	MIO_IN MIO_OUT MIO_PORTANY POLLHUP POLLIN POLLOUT SIO_DEVANY
+	SIO_ERROR SIO_IGNORE SIO_LE_NATIVE SIO_MAXVOL SIO_NCHAN SIO_NCONF
+	SIO_NENC SIO_NRATE SIO_PLAY SIO_REC SIO_SYNC)) {
 	next if (eval "my \$a = $constname; 1");
 	if ($@ =~ /^Your vendor has not defined Audio::Sndio::Bindings macro $constname/) {
 		print "# pass: $@";
